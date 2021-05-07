@@ -19,6 +19,7 @@ const app = express();
 // require database configuration
 require('./configs/db.config');
 
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -36,6 +37,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
+const { config } = require('dotenv');
 app.use('/', index);
 
 module.exports = app;
